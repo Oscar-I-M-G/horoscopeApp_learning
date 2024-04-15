@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initUI()
     }
+    //
 
     private fun initUI() {
         initNavigation()
