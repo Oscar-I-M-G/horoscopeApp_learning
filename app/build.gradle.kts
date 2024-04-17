@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -39,6 +41,8 @@ android {
         enable = true
     }
 
+
+
 }
 
 dependencies {
@@ -47,12 +51,15 @@ dependencies {
      * */
     //buena practica
     val navVersion= "2.7.1"
+    val dagVersion = "2.48"
 
     //  Nav Component
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
     //  DaggerHilt
+    implementation("com.google.dagger:hilt-android:$dagVersion")
+    kapt("com.google.dagger:hilt-compiler:$dagVersion")
 
     //  Extra
     implementation("androidx.core:core-ktx:1.9.0")
