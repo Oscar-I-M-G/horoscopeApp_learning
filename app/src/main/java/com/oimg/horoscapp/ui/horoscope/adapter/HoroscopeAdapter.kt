@@ -10,7 +10,7 @@ class HoroscopeAdapter (private var horoscopeList: List<HoroscopeInfo> = emptyLi
     private val onItemSelected:(HoroscopeInfo)-> Unit) :
     RecyclerView.Adapter<HoroscopeViewHolder>(){
 
-    fun updateList(list:List<HoroscopeInfo>){
+    fun updateList(list:List<HoroscopeInfo>) {
         horoscopeList = list
         notifyDataSetChanged()
     }

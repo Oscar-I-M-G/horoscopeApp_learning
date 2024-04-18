@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+
+    // seguro navigation
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
