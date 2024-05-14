@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/primary"
     tools:context=".ui.detail.HoroscopeDetailActivity">
-    
     <ImageView
         android:id="@+id/ivDetail"
         android:layout_width="0dp"
@@ -15,7 +14,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:background="@color/red"
+        tools:background="@color/red"/>
+    <ImageView
+        android:id="@+id/ivBack"
+        android:src="@drawable/ic_back"
+        android:padding="24dp"
+        app:tint="@color/gold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetail"
+        tools:text="EJEMPLO"
+        style="@style/Title"/>
+
+    <TextView
+        android:id="@+id/tvBody"
+        style="@style/Body"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        tools:text="ajsdhfajkshfahlbajksnfajkhgjkashajkshjkakjghajskfhjkashfjakhfajkhkjhjkshfasjkdhf jkasdhfjkashfkj"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
+
+    <ProgressBar
+        android:id="@+id/pbDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/gold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

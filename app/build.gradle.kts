@@ -23,12 +23,20 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            resValue("string","ivanname","HoroscApp")
+            buildConfigField("String","BASE_URL","\"https://newastro.vercel.app/\"")
+        }
+        getByName("debug") {
+            resValue("string","ivanname","[DEBUG] HoroscApp")
+            isDebuggable = true
+            buildConfigField("String","BASE_URL","\"https://newastro-debug.vercel.app/\"")
         }
     }
     compileOptions {
@@ -39,11 +47,11 @@ android {
         jvmTarget = "1.8"
     }
 
-    //we are going to use viewbinding
-    viewBinding{
-        enable = true
-    }
 
+    buildFeatures{
+        viewBinding = true
+        buildConfig = true
+    }
 
 
 }
@@ -55,6 +63,12 @@ dependencies {
     //buena practica
     val navVersion= "2.7.1"
     val dagVersion = "2.48"
+    val retfitVersion = "2.9.0"
+
+    //  Retrofit
+    implementation("com.squareup.retrofit2:retrofit:$retfitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retfitVersion")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.3.1")
 
     //  Nav Component
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
@@ -66,6 +80,7 @@ dependencies {
 
     //  Extra
     implementation("androidx.core:core-ktx:1.9.0")
+
 
 
 
